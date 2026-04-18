@@ -1,0 +1,47 @@
+{
+  "name": "rag-chatbot",
+  "version": "1.0.0",
+  "description": "rag chatbot backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/index.ts",
+    "chunk-worker": "tsx watch src/configs/chunk.worker.ts",
+    "delete-chat-worker": "tsx watch src/configs/deleteChat.worker.ts",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/busboy": "^1.5.4",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^25.5.2",
+    "@types/pdfjs-dist": "^2.10.377",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "@clerk/express": "^2.1.1",
+    "@google/genai": "^1.48.0",
+    "@qdrant/js-client-rest": "^1.17.0",
+    "bcrypt": "^6.0.0",
+    "bullmq": "^5.73.0",
+    "busboy": "^1.6.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.1",
+    "pdf2json": "^4.0.2",
+    "pg": "^8.20.0",
+    "reflect-metadata": "^0.2.2",
+    "tsx": "^4.21.0",
+    "typeorm": "^0.3.28",
+    "uuid": "^13.0.0"
+  }
+}
