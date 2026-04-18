@@ -63,11 +63,20 @@ The system follows a modular RAG pipeline:
 
 ---
 
-## Environment Variables
+# ⚙️ Environment Variables
 
+This project uses separate environment configurations for **Backend** and **Frontend**.
 
-### Backend Environment Variables
+---
+
+## 🖥️ Backend Environment Variables
+
+Create a `.env` file inside the backend directory:
+
+```env
+
 PORT=8000
+
 
 GEMINI_API_KEY=
 MODEL_ID=gemini-3.1-flash-lite-preview
@@ -76,9 +85,10 @@ EMBEDDING_MODEL_ID=gemini-embedding-001
 BULL_MQ_REDIS_HOST=localhost
 BULL_MQ_REDIS_PORT=6379
 
-QDRANT_URL=http://localhost:6333
 
+QDRANT_URL=http://localhost:6333
 QDRANT_COLLECTION_NAME=pdf_chunks
+
 
 DB_HOST=
 DB_PORT=
@@ -86,10 +96,15 @@ DB_USER=pguser
 DB_PASSWORD=
 DB_NAME=
 
+
 CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
 
-### Frontend Environment Variables
+
+## 🖥️ Fronetend Environment Variables
+
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
-NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+
+
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000'
