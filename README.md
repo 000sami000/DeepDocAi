@@ -46,8 +46,6 @@ The chatbot uses a combination of large language models and vector search to ens
 
 ## System Architecture
 
-The system follows a modular RAG pipeline:
-
 1. User uploads a PDF file from the frontend.
 2. Backend receives the file and stores metadata in PostgreSQL.
 3. A background job is created using BullMQ.
@@ -56,10 +54,10 @@ The system follows a modular RAG pipeline:
 6. Each chunk is converted into embeddings using the Gemini Embedding Model.
 7. Embeddings are stored in Qdrant vector database.
 8. When a user asks a question:
-   - The query is converted into an embedding
+   - Query is converted into embedding
    - Similar chunks are retrieved from Qdrant
    - Relevant context is sent to Gemini LLM
-   - The model generates a response based only on retrieved context
+   - Model generates a response based only on retrieved context
 
 ---
 
@@ -74,9 +72,7 @@ This project uses separate environment configurations for **Backend** and **Fron
 Create a `.env` file inside the backend directory:
 
 ```env
-
 PORT=8000
-
 
 GEMINI_API_KEY=
 MODEL_ID=gemini-3.1-flash-lite-preview
@@ -85,10 +81,8 @@ EMBEDDING_MODEL_ID=gemini-embedding-001
 BULL_MQ_REDIS_HOST=localhost
 BULL_MQ_REDIS_PORT=6379
 
-
 QDRANT_URL=http://localhost:6333
 QDRANT_COLLECTION_NAME=pdf_chunks
-
 
 DB_HOST=
 DB_PORT=
@@ -96,15 +90,5 @@ DB_USER=pguser
 DB_PASSWORD=
 DB_NAME=
 
-
 CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
-
-
-## 🖥️ Fronetend Environment Variables
-
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
-
-
-NEXT_PUBLIC_API_BASE_URL=http://localhost:8000'
